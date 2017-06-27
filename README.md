@@ -1,6 +1,6 @@
 # "Hello, Docker!" container
 
-[![Build Status](https://travis-ci.org/patrickdappollonio/hello-docker.svg?branch=master)](https://travis-ci.org/patrickdappollonio/docker-http-server)
+[![Build Status](https://travis-ci.org/patrickdappollonio/hello-docker.svg?branch=master)](https://travis-ci.org/patrickdappollonio/hello-docker)
 [![Docker Automated buil](https://img.shields.io/docker/automated/patrickdappollonio/hello-docker.svg)](https://hub.docker.com/r/patrickdappollonio/hello-docker/)
 
 This Docker container is just a `Hello, world!` example to practice with containers in general.
