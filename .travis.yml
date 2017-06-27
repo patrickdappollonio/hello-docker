@@ -1,0 +1,24 @@
+sudo: required
+
+services:
+  - docker
+
+language: go
+go:
+  - 1.8.3
+
+env:
+  global:
+    - IMAGE_TAG=$DOCKER_USERNAME/hello-docker
+
+install:
+  - # an empty install saves the hassle of pseudo-getting deps (they're vendored, so no need!)
+
+script:
+  - make ci
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push $IMAGE_TAG;
+    fi
