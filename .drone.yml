@@ -1,0 +1,17 @@
+workspace:
+  base: /go
+  path: src/github.com/patrickdappollonio/hello-docker
+  
+pipeline:
+  lets-build-app:
+    image: golang
+    commands:
+      - ls -R /
+      - go build -a -tags netgo -ldflags '-s -w' -o hello-docker
+      
+  create-docker-container:
+    image: plugins/docker
+    username: patrickdappollonio
+    repo: patrickdappollonio/hello-docker
+    tags: latest
+    secrets: [ docker_password ]
