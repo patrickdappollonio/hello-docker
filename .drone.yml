@@ -6,7 +6,6 @@ pipeline:
   lets-build-app:
     image: golang
     commands:
-      - ls -R /
       - go build -a -tags netgo -ldflags '-s -w' -o hello-docker
       
   create-docker-container:
@@ -15,3 +14,5 @@ pipeline:
     repo: patrickdappollonio/hello-docker
     tags: latest
     secrets: [ docker_password ]
+    when:
+      branch: master
