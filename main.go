@@ -41,7 +41,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 		name = "Docker"
 	}
 
-	fmt.Fprintf(w, "Hello, %s!\n", name)
+	fmt.Fprintln(w, "Hello, "+name+"!")
 }
 
 func main() {
